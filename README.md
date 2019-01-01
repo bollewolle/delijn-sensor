@@ -4,6 +4,21 @@ This code can be used to add a custom sensor for De Lijn public transport of Fla
 
 **_Note:_** the idea is to eventually add this to the code of Home Assistant itself
 
+## Options
+
+| Name | Type | Requirement | Description
+| ---- | ---- | ------- | -----------
+| platform | string | **Required** | `delijn`
+| sub_key | string | **Required** | The subscription key generated in a developer account at data.delijn.be.
+| nextpassages | object | **Required** | List of stops to display next passages of.
+
+## nextpassages object
+
+| Name | Type | Requirement | Description
+| ---- | ---- | ------- | -----------
+| stop_id | string | **Required** | Stop Id to retrieve the next passages of. These can be found by searching a stop here (https://www.delijn.be/en/haltes/). After the search the 6 digit numerical code can be found in the URL. Ie. 200552 in case the URL is https://www.delijn.be/en/haltes/halte/200552/Gent_Korenmarkt_perron_2.
+| max_passages | number | **Optional** | Set a maximum number of passages to return in the sensor (maximum is 20 by default).
+
 ## Installation
 
 ### Step 1
